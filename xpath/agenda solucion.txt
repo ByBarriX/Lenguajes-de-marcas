@@ -1,0 +1,42 @@
+AGENDA:
+
+EJERCICIO 1:
+
+INSTRUCCION:Nombre del propietario de la agenda.
+
+RESPUESTA:/agenda/propietario/identificadores/nombre
+
+
+EJERCICIO 2:
+
+INSTRUCCION:Teléfono de casa del propietario.
+
+RESPUESTA: /agenda/propietario/telefonos/casa
+
+
+EJERCICIO 3:
+
+INSTRUCCION:Nombres y apellidos de los contactos de la agenda
+
+RESPUESTA:/agenda/contactos/persona/identificadores/nombre
+
+
+EJERCICIO 4:
+
+INSTRUCCION:Nombre e identificador de cada contacto.
+
+RESPUESTA:/agenda/contactos/persona/@id
+
+
+EJERCICIO 5:
+
+INSTRUCCION:Datos del contacto con identificador p02.
+
+RESPUESTA:/agenda/contactos/persona[@id="p02"]
+
+
+EJERCICIO 6:
+
+INSTRUCCION:Identificadores de los contactos que tienen móvil.
+
+RESPUESTA:/agenda/contactos/persona[telefonos/movil]/@id

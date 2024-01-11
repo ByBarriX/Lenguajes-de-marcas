@@ -1,0 +1,64 @@
+CICLOS_2:
+
+EJERCICIO 1:
+
+INSTRUCCION:Nombre del instituto.  
+
+RESPUESTA:/ies/nombre
+
+
+EJERCICIO 2:
+
+INSTRUCCION:Página web del instituto. 
+
+RESPUESTA: /ies/web
+
+
+EJERCICIO 3:
+
+INSTRUCCION:Nombre de los ciclos formativos. 
+
+RESPUESTA:/ies/ciclos/nombre
+
+
+EJERCICIO 4:
+
+INSTRUCCION:Siglas por las que se conocen los ciclos formativos.
+
+RESPUESTA:/ies/ciclos/ciclo/@id
+
+
+EJERCICIO 5:
+
+INSTRUCCION:Años en los que se publicaron los decretos de título de los ciclos formativos
+
+RESPUESTA:/ies/ciclos/ciclo/decretoTitulo/@año/nombre
+
+
+EJERCICIO 6:
+
+INSTRUCCION:Ciclos formativos de Grado Medio (se trata de obtener el elemento completo).
+
+RESPUESTA:/ies/ciclos/ciclo[grado='Medio']
+
+
+EJERCICIO 7:
+
+INSTRUCCION: Nombre de los ciclos formativos de Grado Superior. 
+
+RESPUESTA:/ies/ciclos/ciclo[grado='Superior']/nombre
+
+
+
+EJERCICIO 8:
+
+INSTRUCCION:nombre de los ciclos formativos anteriores a 2010.
+
+RESPUESTA:/ies/ciclos/ciclo[decretoTitulo/@año<2010]/nombre
+
+
+EJERCICIO 9:
+
+INSTRUCCION:Nombre de los ciclos formativos de 2008 o 2010.
+
+RESPUESTA:/ies/ciclos/ciclo[decretoTitulo/@año=2008 or decretoTitulo/@año=2010]/nombre
