@@ -9,4 +9,4 @@
 5. Nombre de los módulos que se imparten en el primer curso de ASIR.
 /ies/modulos/modulo[curso='1'][ciclo='ASIR']/nombre
 6. Horas semanales de los módulos de más de 3 horas semanales.
-/ies/modulos/modulo[horasSemanales>'3']/nombre
+/ies/modulos/modulo[horasSemanales>'3']/nombree
