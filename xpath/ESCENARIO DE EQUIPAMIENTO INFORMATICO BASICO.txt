@@ -1,0 +1,26 @@
+As máquinas que contén o documento:
+XPath: /equipos/máquina
+
+A información correspondente ao hardware das máquinas:
+XPath: /equipos/máquina/hardware
+
+A información de configuración das máquinas:
+XPath: /equipos/máquina/config
+
+A lista de fabricantes dos equipos:
+XPath: /equipos/máquina/hardware/fabricante/text()
+
+A lista de discos que conteñen:
+XPath: /equipos/máquina/hardware/disco
+
+Os enderezos IP:
+XPath: /equipos/máquina/config/IP/text()
+
+Os nomes das máquinas:
+XPath: /equipos/máquina/@nome
+
+Os nomes das máquinas que teñan gravadora óptica (DVD):
+XPath: /equipos/máquina/hardware/gravadora[@tipo='DVD']/../../@nome
+
+O sistema operativo das máquinas nas que figure o "role":
+XPath: /equipos/máquina/config[role]/OS/text()
