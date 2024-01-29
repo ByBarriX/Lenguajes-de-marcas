@@ -1,41 +1,49 @@
 CHULETILLA XPATH
-
 /: Selecciona el nodo raíz.
 //: Selecciona nodos en cualquier lugar del documento.
 .: Selecciona el nodo actual.
 ..: Selecciona el nodo padre.
-Selección por Nombre de Elemento:
 
+Selección por Nombre de Elemento:
 /elemento: Selecciona el nodo raíz llamado "elemento".
 //elemento: Selecciona todos los nodos llamados "elemento" en cualquier lugar del documento.
 elemento: Selecciona nodos llamados "elemento" dentro del contexto actual.
-Selección por Atributos:
 
+Selección por Atributos:
 /elemento[@atributo='valor']: Selecciona el nodo raíz llamado "elemento" con un atributo específico y valor.
 //elemento[@atributo='valor']: Selecciona todos los nodos llamados "elemento" con un atributo específico y valor.
-Selección por Posición:
 
+Selección por Posición:
 /elemento[1]: Selecciona el primer nodo "elemento".
 /elemento[position()=1]: Alternativa para seleccionar el primer nodo "elemento".
 /elemento[last()]: Selecciona el último nodo "elemento".
 /elemento[position()>1]: Selecciona nodos "elemento" a partir del segundo.
+
 Selección por Contenido del Texto:
-
 /elemento[text()='texto']: Selecciona nodos "elemento" con un contenido de texto específico.
+
 Selección por Combinación de Condiciones:
-
 /elemento[@atributo='valor' and otroAtributo='otroValor']: Selecciona nodos "elemento" con dos condiciones.
-Selección de Nodos Anidados:
 
-/padre/hijo: Selecciona todos los nodos "hijo" que son hijos directos de un nodo "padre".
-Funciones XPath:
+TEXTO QUE CONTIENE X LETRA: 
+/cine/persoas/persoa[contains(nome,"J")]
+TEXTO QUE CUENTA CON MAS DE 1 X:
+/cine/peliculas/pelicula[count(actor) > 1]
+TEXTO QUE NO TIENE X ATRIBUTO EN 1 ELEMENTO:
+/cine/persoas/persoa[not(datas/@fallecemento)]/nome/text()
 
-count(): Devuelve el número de nodos seleccionados.
-concat(): Concatena cadenas.
-contains(): Comprueba si una cadena contiene otra.
-starts-with(): Comprueba si una cadena comienza con otra.
-ends-with(): Comprueba si una cadena termina con otra.
-Ejemplos de Uso:
+QUE TE MUESTRE DIRECTAMENTE EL TEXTO Y YA:
+/text()
+TEXTO QUE SE ENCUENTRE ENTRE 2 VALORES:
+/cine/peliculas/pelicula[data >= 1955 and data <= 1965]
 
-/libro[@id='1']/titulo: Selecciona el elemento "titulo" dentro del nodo "libro" que tiene un atributo "id" igual a "1".
-//autor[.='John Doe']: Selecciona nodos "autor" cuyo contenido de texto es "John Doe" en cualquier lugar del documento.
+TEXTO EN LOS QUE X COSA PARTICIPE:
+/cine/peliculas/pelicula[data >= 1955 and data <= 1965]
+
+TEXTO EN LOS QUE X COSA APAREZCA 2 VECES EN DIFERENTES ATRIBUTOS:
+/cine/persoas/persoa[nome = /cine/peliculas/pelicula/director/text() and nome = /cine/peliculas/pelicula/actor/text()]/nome/text()
+
+
+
+
+
