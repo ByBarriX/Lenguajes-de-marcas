@@ -1,0 +1,20 @@
+Elabora un documento XSD que permita validar el siguiente documento XML:
+
+<dispositivo>conectado</dispositivo>
+
+El contenido del elemento <dispositivo> solo puede tomar dos valores: conectado u ocupado
+
+SOLUCION:
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="estadoDispositivoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="conectado"/>
+      <xs:enumeration value="ocupado"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="dispositivo" type="estadoDispositivoType"/>
+
+</xs:schema>

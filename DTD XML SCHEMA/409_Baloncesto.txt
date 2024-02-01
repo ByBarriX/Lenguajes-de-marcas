@@ -1,0 +1,89 @@
+Escribe un documento XML que permita guardar la información de dos equipos de baloncesto y su correspondiente documento DTD que permita su validación.
+
+El nodo raíz del documento XML será equipos_de_baloncesto, el cual contendrá dos elementos equipo.
+
+De cada equipo, se debe almacenar:
+* nombre
+* ciudad
+* entrenador
+* jugadores
+
+De cada jugador, se debe guardar:
+* nombre
+* posicion: deberá representarse mediante un atributo y sus valores pueden ser (Base, Escolta, Alero o Pivot).
+* nacionalidad
+
+
+SOLUCION:
+
+Documento XML :
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE equipos_de_baloncesto SYSTEM "equipos_de_baloncesto.dtd">
+
+<equipos_de_baloncesto>
+  <equipo>
+    <nombre>Equipo A</nombre>
+    <ciudad>Barcelona</ciudad>
+    <entrenador>Carlos Martínez</entrenador>
+    <jugadores>
+      <jugador posicion="Base">
+        <nombre>Juan García</nombre>
+        <nacionalidad>Española</nacionalidad>
+      </jugador>
+      <jugador posicion="Escolta">
+        <nombre>Marta López</nombre>
+        <nacionalidad>Argentina</nacionalidad>
+      </jugador>
+      <jugador posicion="Alero">
+        <nombre>Pablo Fernández</nombre>
+        <nacionalidad>Mexicana</nacionalidad>
+      </jugador>
+      <jugador posicion="Pivot">
+        <nombre>Andrea Ruiz</nombre>
+        <nacionalidad>Italiana</nacionalidad>
+      </jugador>
+    </jugadores>
+  </equipo>
+
+  <equipo>
+    <nombre>Equipo B</nombre>
+    <ciudad>Madrid</ciudad>
+    <entrenador>Luisa Sánchez</entrenador>
+    <jugadores>
+      <jugador posicion="Base">
+        <nombre>Ricardo Rodríguez</nombre>
+        <nacionalidad>Colombiana</nacionalidad>
+      </jugador>
+      <jugador posicion="Escolta">
+        <nombre>Laura Gómez</nombre>
+        <nacionalidad>Francesa</nacionalidad>
+      </jugador>
+      <jugador posicion="Alero">
+        <nombre>Jorge Martínez</nombre>
+        <nacionalidad>Alemana</nacionalidad>
+      </jugador>
+      <jugador posicion="Pivot">
+        <nombre>Ana Jiménez</nombre>
+        <nacionalidad>Estadounidense</nacionalidad>
+      </jugador>
+    </jugadores>
+  </equipo>
+</equipos_de_baloncesto>
+
+
+Documento DTD :
+
+<!ELEMENT equipos_de_baloncesto (equipo, equipo)>
+
+<!ELEMENT equipo (nombre, ciudad, entrenador, jugadores)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT ciudad (#PCDATA)>
+<!ELEMENT entrenador (#PCDATA)>
+<!ELEMENT jugadores (jugador, jugador, jugador, jugador)>
+
+<!ELEMENT jugador (nombre, nacionalidad)>
+<!ATTLIST jugador posicion (Base|Escolta|Alero|Pivot) #REQUIRED>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT nacionalidad (#PCDATA)>

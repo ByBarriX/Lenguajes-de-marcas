@@ -1,0 +1,37 @@
+Elabora un documento XSD que permita validar el siguiente documento XML:
+
+<nota> 
+  <para>Pedro</para> 
+  <de>Laura</de> 
+  <titulo>Recordatorio</titulo> 
+  <contenido>A las 7:00 pm en la puerta del teatro</contenido> 
+</nota> 
+
+SOLUCION:
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="contenidoType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="tituloType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="nombreType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+
+  <xs:element name="nota">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="para" type="nombreType"/>
+        <xs:element name="de" type="nombreType"/>
+        <xs:element name="titulo" type="tituloType"/>
+        <xs:element name="contenido" type="contenidoType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
